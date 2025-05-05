@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_forms_contact_forms",
+  "info": {
+    "displayName": "Contact Form",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "userEmail": {
+      "type": "email"
+    },
+    "noSignInUsername": {
+      "type": "string"
+    },
+    "subjectDropdown": {
+      "type": "enumeration",
+      "enum": [
+        "tbd"
+      ]
+    },
+    "subject": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

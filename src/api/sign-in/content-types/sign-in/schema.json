@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "sign_ins",
+  "info": {
+    "singularName": "sign-in",
+    "pluralName": "sign-ins",
+    "displayName": "Sign In",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "signin": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.sign-in"
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "global": {
+    "siteName": "GMP Audio Review App",
+    "defaultSeo": {
+      "metaTitle": "GMP Home Page",
+      "metaDescription": "A React/Strapi/PostgreSQL web portal for GMP's clientele",
+      "shareImage": null
+    },
+    "siteDescription": "An Audio Review App",
+    "favicon": "favicon.ico"
+  },
+  "about": {
+    "title": "About GMP",
+    "heading": "This About GMP page is an example page.",
+    "description": "About GMP",
+    "blocks": [
+      {
+        "__component": "shared.rich-text",
+        "body": "We're all about quality here."
+      },
+      {
+        "__component": "shared.media",
+        "file": "favicon.ico"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "name": "audio",
+      "slug": "audio",
+      "description": "Any audio-related media"
+    },
+    {
+      "name": "images",
+      "slug": "images",
+      "description": "Any image-related media"
+    },
+    {
+      "name": "videos",
+      "slug": "videos",
+      "description": "Any visual, video-related media"
+    }
+  ],
+  "users": [
+    {
+      "username": "David Doe",
+      "email": "daviddoe@strapi.io",
+      "provider": "daviddoe@strapi.io.jpg",
+      "blocked": "daviddoe@strapi.io"
+    }
+  ],
+  "notes": [
+    {
+      "title": "The internet's Own boy",
+      "slug": "the-internet-s-own-boy",
+      "description": "Follow the story of Aaron Swartz, the boy who could change the world",
+      "body": "Follow the story of Aaron Swartz, the boy who could change the world"
+    },
+    {
+      "title": "This shrimp is awesome",
+      "slug": "this-shrimp-is-awesome",
+      "description": "Mantis shrimps, or stomatopods, are marine crustaceans of the order Stomatopoda.",
+      "body": "Mantis shrimps, or stomatopods, are marine crustaceans of the order Stomatopoda."
+    },
+    {
+      "title": "A bug is becoming a meme on the internet",
+      "slug": "a-bug-is-becoming-a-meme-on-the-internet",
+      "description": "How a bug on MySQL is becoming a meme on the internet",
+      "body": "How a bug on MySQL is becoming a meme on the internet"
+    },
+    {
+      "title": "Beautiful picture",
+      "slug": "beautiful-picture",
+      "description": "Description of a beautiful picture",
+      "body": "Description of a beautiful picture"
+    },
+    {
+      "title": "What's inside a Black Hole",
+      "slug": "what-s-inside-a-black-hole",
+      "description": "Maybe the answer is in this article, or not...",
+      "body": "Maybe the answer is in this article, or not..."
+    }
+  ],
+  "medias": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "url": "www.b.co"
+    }
+  ],
+  "contact": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co",
+      "blocks": [
+        {
+          "__component": "forms.contact-form",
+          "userEmail": "We're all about quality here.",
+          "noSignInUsername": "We're all about quality here.",
+          "subjectDropdown": "We're all about quality here.",
+          "subject": "We're all about quality here.",
+          "message": "We're all about quality here."
+        }
+      ]
+    }
+  ],
+  "cookie-policy": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "disclaimer": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "faqs": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "how-to": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "privacy-policy": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "pricing": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "services": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "sign-in": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "sitemap": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ],
+  "term-and-condition": [
+    {
+      "title": "audio",
+      "description": "audio",
+      "heading": "www.b.co"
+    }
+  ]
+}

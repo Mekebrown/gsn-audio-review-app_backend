@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "disclaimers",
+  "info": {
+    "singularName": "disclaimer",
+    "pluralName": "disclaimers",
+    "displayName": "Disclaimer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

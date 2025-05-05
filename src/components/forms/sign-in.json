@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_forms_sign_ins",
+  "info": {
+    "displayName": "Sign In",
+    "icon": "walk"
+  },
+  "options": {},
+  "attributes": {
+    "signInEmail": {
+      "type": "email"
+    },
+    "signInPassword": {
+      "type": "password"
+    }
+  }
+}

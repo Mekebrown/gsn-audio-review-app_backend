@@ -1,10 +1,17 @@
+import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+import { getSignedUrl as getS3SignedUrl } from "@aws-sdk/s3-request-presigner";
+
 export default ({ env }) => {
-  console.log("🔍 AWS ENV", {
-    AWS_ACCESS_KEY_ID: env("AWS_ACCESS_KEY_ID"),
-    AWS_SECRET_ACCESS_KEY: env("AWS_SECRET_ACCESS_KEY") ? "✓ present" : "✗ missing",
-    AWS_REGION: env("AWS_REGION"),
-    AWS_BUCKET: env("AWS_BUCKET"),
-    baseUrl: `https://${env("AWS_BUCKET")}.s3.${env("AWS_REGION")}.amazonaws.com`
+  const region = env("AWS_REGION");
+  const bucket = env("AWS_BUCKET");
+  const expiresIn = Number(env("AWS_SIGNED_URL_EXPIRES") || 900);
+
+  const s3Client = new S3Client({
+    region,
+    credentials: {
+      accessKeyId: env("AWS_ACCESS_KEY_ID"),
+      secretAccessKey: env("AWS_SECRET_ACCESS_KEY"),
+    },
   });
 
   return {
@@ -12,17 +19,22 @@ export default ({ env }) => {
       config: {
         provider: "aws-s3",
         providerOptions: {
-            credentials: {
-              accessKeyId: env("AWS_ACCESS_KEY_ID"),
-              secretAccessKey: env("AWS_SECRET_ACCESS_KEY"),
-            },
-            region: env("AWS_REGION"),
-            params: {
-              ACL: "private",
-              signedUrlExpires: env.int("AWS_SIGNED_URL_EXPIRES", 900),
-              Bucket: env("AWS_BUCKET"),
-            },
-            baseUrl: `https://${env("AWS_BUCKET")}.s3.${env("AWS_REGION")}.amazonaws.com`,
+          credentials: {
+            accessKeyId: env("AWS_ACCESS_KEY_ID"),
+            secretAccessKey: env("AWS_SECRET_ACCESS_KEY"),
+          },
+          region,
+          params: {
+            ACL: "private",
+            Bucket: bucket,
+          },
+          getSignedUrl: async (key) => {
+            const command = new GetObjectCommand({
+              Bucket: bucket,
+              Key: key,
+            });
+            return getS3SignedUrl(s3Client, command, { expiresIn });
+          },
         },
         actionOptions: {
           upload: {},

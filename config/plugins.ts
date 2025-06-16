@@ -1,4 +1,12 @@
 export default ({ env }) => {
+  console.log("🔍 AWS ENV", {
+    AWS_ACCESS_KEY_ID: env("AWS_ACCESS_KEY_ID"),
+    AWS_SECRET_ACCESS_KEY: env("AWS_SECRET_ACCESS_KEY") ? "✓ present" : "✗ missing",
+    AWS_REGION: env("AWS_REGION"),
+    AWS_BUCKET: env("AWS_BUCKET"),
+    baseUrl: `https://${env("AWS_BUCKET")}.s3.${env("AWS_REGION")}.amazonaws.com`
+  });
+
   return {
     upload: {
       config: {

@@ -3,20 +3,16 @@ module.exports = ({ env }) => ({
       config: {
         provider: "aws-s3",
         providerOptions: {
-          baseUrl: env("GMP_API_URL"),
-          rootPath: env("GMP_URL"),
-          s3Options: {
             credentials: {
-              accessKeyId: env("AWS_ACCESS_KEY_ID"),
-              secretAccessKey: env("AWS_ACCESS_SECRET"),
+              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
             },
-            region: env("AWS_REGION"),
+            region: process.env.AWS_REGION,
             params: {
-              ACL: env("AWS_ACL", "public-read"),
-              signedUrlExpires: env("AWS_SIGNED_URL_EXPIRES", 15 * 60),
-              Bucket: env("AWS_BUCKET"),
+              ACL: "private",
+              signedUrlExpires: process.env.AWS_SIGNED_URL_EXPIRES,
+              Bucket: process.env.AWS_BUCKET,
             },
-          },
         },
         actionOptions: {
           upload: {},
@@ -26,4 +22,3 @@ module.exports = ({ env }) => ({
       },
     },
   });
-  

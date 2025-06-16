@@ -11,9 +11,10 @@ export default ({ env }) => {
             region: env("AWS_REGION"),
             params: {
               ACL: "private",
-              signedUrlExpires: env("AWS_SIGNED_URL_EXPIRES"),
+              signedUrlExpires: env.int("AWS_SIGNED_URL_EXPIRES", 900),
               Bucket: env("AWS_BUCKET"),
             },
+            baseUrl: `https://${env("AWS_BUCKET")}.s3.${env("AWS_REGION")}.amazonaws.com`,
         },
         actionOptions: {
           upload: {},

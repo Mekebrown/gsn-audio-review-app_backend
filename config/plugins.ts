@@ -14,6 +14,14 @@ export default ({ env }) => {
     },
   });
 
+  console.log("🧪 Render ENV: ", {
+    ACCESS_KEY_ID: env("AWS_ACCESS_KEY_ID"),
+    SECRET_ACCESS_KEY: env("AWS_SECRET_ACCESS_KEY") ? "it is set" : "not set",
+    BUCKET: env("AWS_BUCKET"),
+    REGION: env("AWS_REGION"),
+    SIGNED_URL_EXPIRES: env("AWS_SIGNED_URL_EXPIRES")
+  });
+
   return {
     upload: {
       config: {
@@ -33,6 +41,7 @@ export default ({ env }) => {
               Bucket: bucket,
               Key: key,
             });
+            console.log("Signed URL for key " + command ? "will be generated" : "not provided");
             return getS3SignedUrl(s3Client, command, { expiresIn });
           },
         },

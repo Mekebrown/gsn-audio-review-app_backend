@@ -1,17 +1,18 @@
-module.exports = ({ env }) => ({
+export default ({ env }) => {
+  return {
     upload: {
       config: {
         provider: "aws-s3",
         providerOptions: {
             credentials: {
-              accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-              secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+              accessKeyId: env("AWS_ACCESS_KEY_ID"),
+              secretAccessKey: env("AWS_SECRET_ACCESS_KEY"),
             },
-            region: process.env.AWS_REGION,
+            region: env("AWS_REGION"),
             params: {
               ACL: "private",
-              signedUrlExpires: process.env.AWS_SIGNED_URL_EXPIRES,
-              Bucket: process.env.AWS_BUCKET,
+              signedUrlExpires: env("AWS_SIGNED_URL_EXPIRES"),
+              Bucket: env("AWS_BUCKET"),
             },
         },
         actionOptions: {
@@ -21,4 +22,5 @@ module.exports = ({ env }) => ({
         },
       },
     },
-  });
+  };
+};

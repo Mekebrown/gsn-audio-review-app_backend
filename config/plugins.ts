@@ -1,6 +1,3 @@
-import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
-import { getSignedUrl as getS3SignedUrl } from "@aws-sdk/s3-request-presigner";
-
 export default ({ env }) => {
   const region = env("AWS_REGION");
   const bucket = env("AWS_BUCKET");
@@ -22,7 +19,6 @@ export default ({ env }) => {
       config: {
         provider: "aws-s3",
         providerOptions: {
-          baseUrl,
           s3Options: {
             credentials: {
               accessKeyId,
@@ -32,9 +28,9 @@ export default ({ env }) => {
             params: {
               ACL: "private",
               Bucket: bucket,
-              signedUrlExpires
             },
           },
+          signedUrlExpires,
         },
         actionOptions: {
           upload: {},

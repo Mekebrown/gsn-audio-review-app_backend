@@ -8,20 +8,6 @@ export default ({ env }) => {
   const baseUrl = `https://${bucket}.s3.${region}.amazonaws.com`;
   // const baseUrl = `https://s3.${region}.amazonaws.com/${bucket}`;
 
-  console.log("✅ Strapi AWS S3 plugin configured with:");
-  console.log(JSON.stringify({
-    accessKeyId: accessKeyId ? "***REDACTED***" : "MISSING",
-    secretAccessKey: secretAccessKey ? "***REDACTED***" : "MISSING",
-    bucket,
-    region,
-    signedUrlExpires,
-    baseUrl,
-  }, null, 2));
-
-  if (!accessKeyId || !secretAccessKey || !bucket || !region) {
-    throw new Error("Missing required AWS environment variables for S3 configuration.");
-  }
-
   return {
     upload: {
       config: {
@@ -34,7 +20,7 @@ export default ({ env }) => {
           region,
           // baseUrl,
           params: {
-            acl,
+            ACL: acl,
             signedUrlExpires,
             Bucket: bucket,
           },

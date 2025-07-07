@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_forms",
+  "info": {
+    "singularName": "contact-form",
+    "pluralName": "contact-forms",
+    "displayName": "_Contact Form Entries",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "subject": {
+      "type": "enumeration",
+      "enum": [
+        "general",
+        "sales",
+        "pricing",
+        "technical",
+        "referral",
+        "partnership",
+        "creative",
+        "other"
+      ],
+      "default": "general"
+    },
+    "otherSubject": {
+      "type": "text"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

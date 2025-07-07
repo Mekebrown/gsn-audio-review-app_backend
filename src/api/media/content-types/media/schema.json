@@ -17,42 +17,26 @@
     "description": {
       "type": "text"
     },
-    "file_1": {
+    "media_file": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
-        "files",
         "videos",
         "audios"
       ]
     },
-    "thumbnail": {
+    "thumbnail_file": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "media"
-    },
-    "url": {
+    "thumbnail_url": {
       "type": "text"
-    },
-    "notes": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::note.note",
-      "mappedBy": "media"
     },
     "admin_user": {
       "type": "relation",
@@ -64,13 +48,32 @@
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user"
     },
-    "file_2": {
-      "allowedTypes": [
-        "files",
-        "audios"
-      ],
+    "markers": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "notes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::note.note",
+      "mappedBy": "media"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "media"
+    },
+    "media_url": {
+      "type": "text"
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sign_in_entries",
+  "info": {
+    "singularName": "sign-in-entry",
+    "pluralName": "sign-in-entries",
+    "displayName": "_Sign In Entries",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "email": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "userId": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

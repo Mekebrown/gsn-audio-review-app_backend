@@ -11,24 +11,8 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "title": {
+    "timestamp": {
       "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
     },
     "users_permissions_user": {
       "type": "relation",
@@ -44,6 +28,10 @@
       "relation": "manyToOne",
       "target": "api::media.media",
       "inversedBy": "notes"
+    },
+    "deleted": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

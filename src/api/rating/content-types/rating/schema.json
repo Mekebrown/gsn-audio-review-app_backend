@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ratings",
+  "info": {
+    "singularName": "rating",
+    "pluralName": "ratings",
+    "displayName": "Ratings",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "value": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rating"
+    }
+  }
+}

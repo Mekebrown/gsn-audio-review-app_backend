@@ -23,9 +23,9 @@
     },
     "media": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::media.media",
-      "inversedBy": "categories"
+      "mappedBy": "category"
     }
   }
 }
